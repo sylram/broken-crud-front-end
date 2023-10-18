@@ -26,6 +26,13 @@ class Inputfield extends React.Component {
     
   }
 
+  // componentDidMount() {
+  //   fetch('/person-controller/readAll')
+  //    .then(response => {
+  //      console.log(response);
+  //      return response.json();
+  //    })
+  //   }
 
   handleInputChange(event) {
       const target = event.target;
@@ -41,7 +48,7 @@ class Inputfield extends React.Component {
     this.setState.data = '';
     const fetchData = async() => {
       try {
-        const response = await fetch('http://localhost:8083/person-controller/update/' + this.setState.personObj.id, {
+        const response = await fetch('/person-controller/update/' + this.setState.personObj.id, {
           method: 'PUT',
           headers: {
             'Accept':'application/json',
@@ -78,7 +85,7 @@ class Inputfield extends React.Component {
     this.setState.data = '';
     const fetchData = async() => {
       try {
-        const response = await fetch('http://localhost:8083//person-controller/create', {
+        const response = await fetch('/person-controller/create', {
           method: 'POST',
           headers: {
             'Accept':'application/json',
@@ -121,7 +128,7 @@ class Inputfield extends React.Component {
     this.setState.data = '';
     const fetchData = async() => {
       try {
-        const response = await fetch('http://localhost:8083/person-controller/read/' + this.setState.personObj.id, {
+        const response = await fetch('/person-controller/read/' + this.setState.personObj.id, {
           method: 'GET',
         });
         if (!response.ok) {
@@ -152,7 +159,7 @@ class Inputfield extends React.Component {
     this.setState.data = '';
     const deleteData = async() => {
       try {
-        const response = await fetch('http://localhost:8083/person-controller/delete/' + this.setState.personObj.id, {
+        const response = await fetch('/person-controller/delete/' + this.setState.personObj.id, {
           method: 'DELETE',
         });
         if (!response.ok) {
@@ -183,7 +190,7 @@ class Inputfield extends React.Component {
     this.setState.data = '';
     const fetchData = async() => {
       try {
-        const response = await fetch('http://localhost:8083/person-controller/readAll', {
+        const response = await fetch('/person-controller/readAll', {
           method: 'GET',
         });
         if (!response.ok) {
